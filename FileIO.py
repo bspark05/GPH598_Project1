@@ -1,9 +1,3 @@
-'''
-Created on Nov 20, 2014
-
-@author: Bumsub
-'''
-
 import pysal
 
 def openFile(connectionString, mode='r'):
