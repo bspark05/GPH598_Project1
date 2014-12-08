@@ -1,6 +1,11 @@
 import numpy as np
 import math
 
+def __init__(self, params):
+    '''
+    Constructor
+    '''
+
 def meanCenter(points):
     pointsArray = np.array(points)
     mnCenter = np.mean(pointsArray, axis=0)
