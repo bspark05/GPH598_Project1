@@ -1,9 +1,14 @@
 import pysal
 
+def __init__(self, params):
+    '''
+    Constructor
+    '''
+
 def openFile(connectionString, mode='r'):
         point = pysal.pysal.core.FileIO.FileIO.open(connectionString, mode='r')  # @UndefinedVariable
         point.seek(0)
-        outputArray = []
+        outputList = []
         for i in point:
-            outputArray.append(i)
-        return outputArray
+            outputList.append(i)
+        return outputList
