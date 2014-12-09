@@ -10,19 +10,11 @@ FileIO.open(connectionString, mode='r') | Parses the String and return a list co
 
 Method |Description                                               
 ---|---
-Statistics
-
-•	Mean center
-
-
-•	Weighted mean center
-
-•	Median center
-
-•	Center of minimum distance 
-
-•	Standard distance 
-
+Statistics.meanCenter(points) | Calculate mean center of points and return the coordinates of the point
+Statistics.medianCenter(points) | Calculate median center of points and return the coordinates of the point
+Statistics.weightedMeanCenter(weight, points) | Calculate weighted mean center of points with weight matrix and return the coordinates of the point
+Statistics.standardDistance(points, weightedMeanCenter) | Cacluate standard distance of points and return the distance
+Statistics.centerOfMinimumDistance(points, diff) | Find center of minimum distance of points using quadtree until the difference of distance become smaller than 'diff' and return the coordinates of the point
 
 ##Polygon
 Method |Description                                               
