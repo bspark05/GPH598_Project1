@@ -1,7 +1,6 @@
 import numpy as np
 import math
 import Polygon as poly
-import matplotlib.pyplot as plt
 
 def meanCenter(points):
     pointsArray = np.array(points)
@@ -57,13 +56,7 @@ def centerOfMinimumDistance(points):
         height = height/2
         times +=1  
     
-    plt.plot(pointsArray[:,0], pointsArray[:,1], 'kx')
-    plt.plot(quaterPoints[:,0],quaterPoints[:,1],'ro')
-    plt.plot(extent[:,0],extent[:,1],'bo')
-    plt.plot(center[0], center[1],'rx')
-    plt.show()
-    
-    
+    return center
     
         
 def makeQuaterPoints(centerPoint, width, height):
