@@ -2,6 +2,11 @@ import numpy as np
 import math
 import Polygon as poly
 
+def __init__(self, params):
+    '''
+    Constructor
+    '''
+
 def meanCenter(points):
     pointsArray = np.array(points)
     mnCenter = np.mean(pointsArray, axis=0)
@@ -22,15 +27,15 @@ def weightedMeanCenter(weight, points):
     wmc = sum(weightArray1)/sum(weightArray)
     return wmc
 
-def standardDistance(points, WMC):
+def standardDistance(points, weightedMeanCenter):
     pointsArray = np.array(points)
-    WMCArray = np.array(WMC)
-    sd1 = sum((pointsArray-WMCArray)*(pointsArray-WMCArray))/len(pointsArray)
+    WMCArray = np.array(weightedMeanCenter)
+    sd1 = sum((pointsArray-WMCArray)**2)/len(pointsArray)
     sd2 = math.sqrt(sd1[0]+sd1[1])
     return sd2
 
 
-def centerOfMinimumDistance(points):
+def centerOfMinimumDistance(points, diff):
     pointsArray = np.array(points)
     extent = poly.makeMBR(points)
     initCenter = [(extent[1][0]+extent[0][0])/2, (extent[2][1]+extent[1][1])/2]
@@ -44,7 +49,7 @@ def centerOfMinimumDistance(points):
     times = 0
     difference = -1
     
-    while difference > 1 or difference == -1:
+    while difference > diff or difference == -1:
         quaterPoints = makeQuaterPoints(center, width, height)
         newCenter = findRectangle(quaterPoints, pointsArray)
         
@@ -81,7 +86,7 @@ def findRectangle(quaterPoints, pointsArray):
         
         if minDistance>tempDist or minDistance == -1:
             minDistance = tempDist
-            print(minDistance)
+            #print(minDistance)
             minDistanceCoor = stdPoint
             
     return minDistanceCoor
