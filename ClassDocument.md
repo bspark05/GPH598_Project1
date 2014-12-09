@@ -15,6 +15,9 @@ Statistics.medianCenter(points) | Calculate median center of points and return t
 Statistics.weightedMeanCenter(weight, points) | Calculate weighted mean center of points with weight matrix and return the coordinates of the point
 Statistics.standardDistance(points, weightedMeanCenter) | Cacluate standard distance of points and return the distance
 Statistics.centerOfMinimumDistance(points, diff) | Find center of minimum distance of points using quadtree until the difference of distance become smaller than 'diff' and return the coordinates of the point
+Statistics.makeQuaterPoints(centerPoint, width, height) | Make a quadtree using center point and size of width and height and return four center points of quadrat
+Statistics.findRectangle(quaterPoints, pointsArray) | Find the rectangle with minimum distance among quadrats and return the coordinate of center
+
 
 ##Polygon
 Method |Description                                               
